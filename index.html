@@ -1,0 +1,108 @@
+<html>
+<head>
+  <title>USP_bot</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="./api.js"></script>
+  <script src="./token.js"></script>
+
+  <style type="text/css">
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      background-color: #3399ff;
+      font-family: "Titillium Web", Arial, sans-serif;
+      font-size: 20px;
+      margin: 0;
+    }
+    .container {
+      position: fixed;
+      margin-top: 150px;
+      top: 55%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+    }
+    p {
+      position: relative;
+      text-align: center;
+      font-size: 80px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #FFFFFF;
+    }
+    input {
+      background-color: #FFFFFF;
+      border: 1px solid #3F7F93;
+      color: #192837;
+      font-family: "Titillium Web";
+      font-size: 20px;
+      line-height: 43px;
+      padding: 0 0.75em;
+      width: 400px;
+      -webkit-transition: all 0.35s ease-in;
+    }
+    textarea {
+      background-color: #070F24;
+      border: 1px solid #122435;
+      color: #606B88;
+      padding: 0.5em;
+      width: 100%;
+      -webkit-transition: all 0.35s ease-in;
+    }
+    input:active, input:focus, textarea:active, textarea:focus {
+      outline: 1px solid #48788B;
+    }
+    .btn {
+      background-color: #FFFFFF;
+      border: 1px solid #549EAF;
+      color: #192837;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Titillium Web";
+      font-size: 20px;
+      line-height: 43px;
+      padding: 0 0.75em;
+      text-align: center;
+      text-transform: uppercase;
+      -webkit-transition: all 0.35s ease-in;
+    }
+    .btn:hover {
+      background-color: #1888A9;
+      color: #183035;
+    }
+    .response {
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: all 0.35s ease-in;
+    }
+    .response.is-active {
+      max-height: 400px;
+    }
+    .response__text {
+      background-color: #FFFFFF;
+      color: #192837;
+      padding: 1em;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="welcomeMessage">
+    <p style="font-size: 250px; margin-bottom: 5px; margin-top: 100px">Hello! </p>
+    <p style="margin-top: 5px">Do you have any questions about USP? </p>
+  </div>
+  <div class="container">
+    <input id="speech" type="text" onkeypress="return keypressed(event)">
+    <button id="rec" class="btn">Ask</button>
+    <div id="response" class="response">
+      <div class="response__text"></div>
+    </div>
+  </div>
+
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet" type="text/css">
+</body>
+</html>
